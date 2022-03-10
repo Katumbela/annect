@@ -1,0 +1,38 @@
+*{
+    font-family: Century Gothic;
+}
+body{
+    background-color: rgb(129, 179, 255);
+}
+center b, .realce{
+    color: rgb(3, 95, 138);
+}
+.tema{
+    color: rgb(3, 95, 138);
+    text-align: center;
+}
+
+#cancel{
+    background-color:rgb(233, 81, 81);
+  }
+a{
+    text-decoration: none;
+    list-style: none;
+    color: rgb(0, 150, 187);
+}
+a:hover{
+    color:rgb(3, 117, 41); ;
+}
+hr{
+    color: rgb(187, 37, 0);;
+}
+
+.conc{
+    color:green;
+  }
+  .pend{
+    color:orange;
+  }
+  .canc{
+    color:red;
+  }

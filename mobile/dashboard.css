@@ -1,0 +1,112 @@
+.deposito{
+    width: 10%;
+    height: 10%;
+    margin: 5px;
+    transition: 0.4s;
+    margin-left: 9px;
+}
+nav{
+    background-color: #09a33c;
+}
+
+.olaUser{
+    text-decoration: underline;
+    color: rgb(26, 67, 121);
+}
+.main{
+    margin-bottom: 5%;
+}
+
+
+.footer{
+    background-color: rgb(8, 122, 199);
+    color: lavender;
+     margin-bottom:0;
+}
+.divisao{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+ footer div img{
+     text-align: center;
+}
+.saque{
+    
+    width: 10%;
+    height: 10%;
+    margin: 5px;
+    transition: 0.4s;
+    margin-right: 9px;
+}
+
+.saldo{
+
+    font-size: 26px;
+}
+
+.balance{
+    border-radius: 9px;
+    width: 60%;
+    background-color: rgb(184, 241, 239);
+    margin-top: 10px;
+    box-shadow: 5px 12px 12px ;
+}
+.deposito:hover, .transfer:hover, .saque:hover{
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+
+.att{
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+
+.attt{
+    text-align: center;
+    margin: 7px;
+    justify-content: center;
+    letter-spacing: 2px;
+    line-height: 30px;
+    color: lightcyan;
+}
+
+
+.atencao{
+    width: 90%;
+    margin-bottom: 7%;
+    background: #09a33c;
+    border-color: rgb(7, 145, 41);
+    box-shadow: 6px 6px 6px  rgb(160, 160, 160);
+    border-radius: 8px;
+}
+
+.transfer{
+    margin-top: 5%;
+    width: 10%;
+    height: 10%;
+    transition: 0.4s;
+}
+
+.transfer_img{
+    float: left;
+    height:25%;
+    width: 50%;
+}
+.transfer_right{
+    float: right;
+    width: 40%;
+}
+.transfer_img2{
+    float: left;
+    height:25%;
+    margin-left: 5px;
+    width: 50%;
+    margin-top: 6%;
+}
+.transfer_right2{
+    float: right;
+    width: 40%;
+    margin-top: 6%;
+}

@@ -1,0 +1,93 @@
+body{
+    background: url(img/fundoazul.jpg) no-repeat;
+    background-size: cover;
+    height: 1000px;
+}
+
+
+.login, .registro{
+
+width:initial;
+padding: 2px;
+letter-spacing: 2px;
+margin: 3px; 
+}
+
+
+.login{
+    border-color: rgb(10, 123, 199);
+    background: none;
+    border-radius: 5px;
+
+}
+.registro{
+    background: rgb(17, 128, 76);
+    color: lightcyan;
+    border-radius: 5px;
+border: none;
+}
+
+.login:hover, .registro:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.reg2{
+    width: 70%;
+    background: rgb(8, 122, 199);
+    color: honeydew;
+    text-transform: uppercase;
+    border-color: rgb(8, 122, 199);
+    border-radius: 6px;
+    transition: 0.5s;
+}
+
+.reg2:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    background: none;
+    color: rgb(23, 24, 23);
+    border-color:rgb(15, 131, 77);
+}
+.nav{
+    position: absolute !important;
+}
+.login2{
+    width: 70%;
+    background: none;
+    border-radius: 6px;
+    text-transform: uppercase;
+    border-color: rgb(8, 122, 199);
+    transition: 0.5s;
+}
+
+.login2:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    background: rgb(15, 131, 77);
+    color: honeydew;
+    border-color:rgb(15, 131, 77);
+}
+
+.icon{
+    width: 20%;
+    height: 20%;
+    border-radius: 8px;
+    text-align: center;
+    border-color: rgb(8, 122, 199);
+}
+
+.desc{
+    width: 80%;
+}
+
+.icon2{
+    height: 30%;
+    width: 100%;
+}
+
+
+.footer{
+    background-color: rgb(8, 122, 199);
+    color: lavender;
+}
