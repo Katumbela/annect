@@ -1,0 +1,25 @@
+.fadeout{
+    font-size: 30px;
+    animation-name: fadeout;
+    -webkit-animation-name: fadeout;
+    -webkit-animation-duration: 10s; animation-duration: 10s;
+    -webkit-animation-fill-mode: both; animation-fill-mode: both;
+}
+
+@keyframes fadeout{
+        0%{
+          opacity: 1;  
+        }
+        100%{ opacity: 0;}
+}
+
+@-webkit-keyframes fadeout{
+    0%{
+        opacity: 1;  
+      }
+      100%{ opacity: 0;}
+}
+
+h4::selection{
+    color: rgb(214, 76, 21);
+}

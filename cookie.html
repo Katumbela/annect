@@ -1,0 +1,357 @@
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+Arquivo: login.asp
+<%@ LANGUAGE="JAVASCRIPT" %>
+<%
+ 
+//declara as variáveis que serão usadas na página
+var nomeusuario=null;
+var senha=null;
+var lembrar=null;
+var destino=null;
+ 
+//Tenta obter um cookie
+nomeusuario = Request.Cookies("nomeusuario");
+ 
+//Se o valor retornado for indefinido substitui por null
+if((""+nomeusuario) == "undefined")
+         nomeusuario = null;
+ 
+//Verifica se existe um destino definido
+destino = Request.QueryString("destino");
+ 
+//verifica se o cookie para o nome do usuário esta vazio , se estiver tenta capturar o nome do usuário,
+a senha e o indicativo para lembrar a senha
+if((nomeusuario==null) || (nomeusuario==""))
+{
+  nomeusuario = Request.Form("nomeusuario");
+  senha = Request.Form("senha");
+  lembrar = Request.Form("lembrar");
+ 
+  //aqui estamos permitindo que o login seja efetuado se a senha e o nome forem iguais 
+  if((nomeusuario != senha) && !eval("""+nomeusuario+""==""+senha+"""))
+     nomeusuario=null;
+}
+ 
+// se o nome do usuário e o destino forem indefinidos atribua null
+if((""+nomeusuario) == "undefined")
+    nomeusuario = null;
+ 
+if((""+destino) == "undefined")
+      destino = null;
+ 
+//se destino for null ou estiver vazio defina para página default : logout.asp
+if((destino==null) || (destino==""))
+    destino = "logout.asp";
+ 
+//Se nome do usuário NÃO for null ou NÃO for vazio então pega ele do cookie
+if((nomeusuario!=null) && (nomeusuario!=""))
+{
+  Response.Cookies("nomeusuario")=nomeusuario;
+ 
+  //Se lembrar estiver ativo então define uma data de expiração para cookie
+  if(lembrar=="on")
+  {
+  var expire,expireString;
+  var month,year;
+ 
+  expire = new Date();
+ 
+  month = expire.getMonth();
+  year = expire.getFullYear();
+ 
+ if(month == 11)
+ {
+  month = 0;
+  year = year+1;
+ }
+ else
+ {
+ month = month+1;
+ }
+ 
+ expire.setMonth(month);
+ expire.setFullYear(year);
+ expireString = expire.toLocaleString();
+ 
+ Response.Cookies("nomeusuario").Expires = expireString;
+}
+ 
+//direciona o usuário para o destino
+Response.Redirect(destino);
+}
+%>
+//Aqui temos o formulário com os dados que o usuário deverá informar
+<html>
+<head>
+<title>Gerenciando logins com cookies</title>
+</head>
+<body>
+//Ao clicar no botão Efetuar login será chamado a página login.asp com o parâmetro destino igual ao que for definido no código
+<form method="POST" action="login.asp?destino=<%=destino%>">
+ 
+<table border=0>
+<tr>
+<td>Nome:</td>
+<td><input type="text" name="nomeusuario" size=12></td>
+</tr>
+<tr>
+<td>Senha:</td>
+<td><input type="password" name="senha" size=12></td>
+</tr>
+<tr>
+<td>lembrar Login:</td>
+<td><input type="checkbox" name="lembrar" value="on"></td>
+</tr>
+<tr colspan=2>
+<td><center><input type="submit" value="Efetuar Login"></center></td>
+</tr>
+</table>
+</form>
+ 
+</body>
+</html>
+ 
+ 
+Arquivo: logout.asp
+ 
+<%@ LANGUAGE="JAVASCRIPT" %>
+<%
+var nomeusuario;
+ 
+// tenta obter o cookie para o usuario
+nomeusuario = Request.Cookies("nomeusuario");
+ 
+// se o usuario for indefinido atribui null
+if((""+nomeusuario) == "undefined")
+       nomeusuario = null;
+ 
+//se foi pressionado o botão de logout ou usuario for null ou vazio define o cookie como vazio e redireciona
+// o usuário para a pagina de login
+if((Request.Form("logout") == "logout") || (nomeusuario==null) || (nomeusuario==""))
+{
+  Response.Cookies("nomeusuario") = "";
+  Response.Redirect("login.asp");
+}
+ 
+%>
+ 
+<html>
+<head>
+<title>Página de Logout</title>
+</head>
+<body>
+//exibe o nome do usuário que se logou e direciona para a página logout.asp
+Olá , <%=nomeusuario%>.
+<form method="POST" action="logout.asp">
+<input type="submit" value="Logout">
+<input type="hidden" name="logout" value="logout">
+</form>
+ 
+</body>
+</html>
+ 
+Arquivo: teste.asp
+ 
+<%@ LANGUAGE="JAVASCRIPT" %>
+<%
+var nomeusuario=null;
+ 
+// pega o usuário do cookie
+nomeusuario = Request.Cookies("nomeusuario");
+ 
+// se o usuário estiver indefinido atribui null
+if((""+nomeusuario) == "undefined")
+      nomeusuario = null;
+ 
+// se o usuario for null ou vazio então manda ela fazer o login
+if((nomeusuario==null) || (nomeusuario==""))
+{
+    Response.Redirect("login.asp?destino=teste.asp");
+}
+%>
+<html>
+<head>
+<title>Gerenciando login com cookies</title>
+</head>
+<body>
+Você esta autenticado !
+</body>
+</html>

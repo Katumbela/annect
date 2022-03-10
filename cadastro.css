@@ -1,0 +1,163 @@
+*{
+    font-family: Century Gothic;
+   
+}
+
+body{
+    background: radial-gradient(  #fbfdfd, #fdffff, #59c2ff ) ;
+    background-size: 2000% 2000%;
+    background-repeat: no-repeat;
+}
+
+.sucess{
+    text-align: center;
+    margin-top: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: #fdffff;
+}
+.form-container{
+    background: #fff;
+    width: 290px;
+    border-radius: 20px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px ;
+    margin: auto;
+    box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-container span{
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+
+.form-btn{
+    display: inline-block;
+}
+
+.form-container form{
+    max-width: 300%;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+}
+
+
+form input{
+    width: 80%;
+    height: 30px;
+    margin: 10px 0 ;
+    padding: 0 10px;
+    border:  1px solid #ccc;
+    border-color: rgb(23, 146, 194);
+    border-radius: 6px;
+}
+
+form .btn{
+    width: 80%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    background: rgb(5, 119, 94);
+padding: 2%;
+border-radius: 9px;
+color: #fff;
+letter-spacing: 2px;
+text-transform: uppercase;
+
+transition: 0.3s;
+}
+
+form .btn:hover{
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+form .btn:focus{
+    outline: none;
+}
+
+#loginform{
+    left: -450px;
+    margin-right: 300px;
+}
+
+#registerform{
+    left: 10px;
+    margin-top: -17%;
+}
+
+form a{
+   font-size: 12px; 
+}
+
+#indicator{
+    width: 50%;
+    border: none;
+    background: rgb(23, 146, 194);
+    height: 4px;
+    left: 2px;
+    margin-top: 9px;
+    transform: translate(50px);
+   transition: 1s;
+}
+
+#loginform input{
+    width: 65%;
+    border-color: rgb(23, 146, 194);
+}
+
+#loginform input:focus{
+    border-color: rgb(23, 146, 194);
+}
+
+#loginform .btn{
+width: 65%;
+}
+
+#registerform input{
+    height: 18px;
+    margin-top: 5px;
+}
+
+#registerform input[type="radio"]:first-child{
+    margin-top: 2px;
+}
+
+#registerform input[type="radio"]{
+    height: 15px;
+    margin-top: 0;
+}
+
+select{
+    border-radius: 5px;
+    border-color: rgb(23, 146, 194);
+}
+
+
+.link{
+    color: rgb(61, 180, 228);
+    font-size: 15px;
+    list-style: none;
+}
+
+input:focus {
+    width: 250px;
+    height: 30px;
+}
+
+.concluido{
+    text-decoration: none;
+    color: rgb(9, 61, 35);
+}
+.concluido:hover{
+    opacity: 0.8;
+}

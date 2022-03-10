@@ -1,0 +1,57 @@
+*{
+    font-family: Century Gothic;
+}
+.formulario{
+    background-color:  #101919;
+}
+
+.form{
+    width: 300px;
+    
+    
+    background: #101919;
+    text-align: center;
+}
+
+.span1{ 
+    font-family: Century Gothic;
+}
+.til{
+    color: rgb(250, 251, 255);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.form input[type ="text"], .form textarea{
+    border:0;
+    background: none;
+    display: block;
+    margin:20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.form input[type ="text"]:focus, .form textarea:focus{
+    width: 280px;
+    border-color: #2ecc71;
+}
+.form button:hover{
+    background: #2ecc71;
+}
+.form button{
+    border:0; 
+    background: none;
+    display: block;
+    margin:20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+ 
+    padding:14px, 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}

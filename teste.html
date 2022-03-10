@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="preloader/preloader-style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+<br><br><br><br>
+
+<!---->
+
+<div class="bodi">
+          <h1>whfkjwehjfhdewjfhc,fhkejlhlk</h1>
+
+         <a href="teste.html"></a> <button onclick="carregar()">okejk</button>
+</div>
+
+<br><br>
+
+<div class="container" >
+    <div id="load" class="tscssload-aim"></div>
+    </div>
+    
+    <script>
+    document.querySelector('.bodi').style.display="none";
+    document.getElementById('load').classList.add('tscssload-aim')
+    
+    
+    setTimeout(()=>{
+        
+    document.getElementById('load').classList.remove('tscssload-aim');
+    document.querySelector('.bodi').style.display="block";
+    }, 2000);
+    </script></body>
+</html>
